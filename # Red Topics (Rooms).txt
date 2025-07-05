@@ -1,0 +1,118 @@
+# Red Topics (Rooms)
+
+## Green Keywords
+
+### Blue Examples
+
+---
+
+# ROOM: Pre Security
+
+## **What is Networking**
+
+A network is a name given to all the devices connected together.
+
+The Internet is a vast network made up of many smaller networks.
+
+An IP Address consists of 4 octets.
+
+IPv6 is more efficient and can **support more IP addresses** than IPv4.
+
+A MAC address is like a serial number of a device; it **cannot be changed** even after a change in location, whereas IP addresses can.
+
+**Note:** MAC Addresses *can* be spoofed!
+
+---
+
+## **Intro to LAN**
+
+- **Ping** uses **ICMP** (Internet Control Message Protocol) packets to check connection quality (existence and stability).
+- The time ICMP packets take is measured by ping.
+
+- **Star topology**: devices inserted into a central hub.
+- **Ring topology**: devices connected in a ring-like structure.
+
+- Routers connect different networks and route traffic based on IP addresses.
+- Switches connect devices within the same network through packet switching.
+
+- Subnetting divides a network into smaller parts for better performance.
+
+- To identify addresses, you need a Host Address.
+
+- A Cache stores other devices' names on the network.
+
+- An ARP request is sent to all devices to find a matching IP address.
+
+- An ARP response acknowledges the request.
+
+- ARP = Address Resolution Protocol.
+
+- DHCP assigns and manages IP addresses.
+
+---
+## **The OSI Model**
+
+The OSI model is employed to transmit data based on layers.
+
+**Encapsulation**: adding pieces of information to data.
+
+### Layers:
+
+7. **Application** — end user services (web browsing, email, file transfers).
+Examples:
+- Browser (Chrome) uses Application to get google.com
+- Outlook uses SMTP (Layer 7) to send email.
+
+6. **Presentation** — converts data size to be compatible, helps encrypt emails (partially), compresses data size, acts as translator.
+Examples:
+- Server sends JSON but app needs XML → reformats data.
+- Negotiates encryption (AES, RSA) but doesn't actually encrypt.
+- gzip compression on web traffic.
+
+5. **Session** — establishes, manages, and terminates connections, divides data into chunks to allow re-sending if lost.
+
+4. **Transport** — splits data into packets, adds port numbers (like apartment numbers), chooses TCP or UDP.
+
+- **TCP (Reliable):**
+  - ✅ Guarantees delivery (resends lost packets)
+  - ✅ Preserves order of data
+  - ❌ Slower (used for websites, emails)
+
+- **UDP (Fast):**
+  - ✅ Very fast (no acknowledgments)
+- ❌ No retransmit if data lost (live streaming, online games)
+
+- **Time to Live (TLL)** times out packets so network won't be clogged.
+
+---
+## Network Layers Summary:
+
+| Layer | Function                  | Key Info                                      |
+|-------|---------------------------|-----------------------------------------------|
+| 3     | Network                  | IP addresses, routers, Internet/WAN          |
+| 2     | Data Link                | MAC addresses, frames, switches, LAN          |
+| 1     | Physical                 | Raw bits over cables/waves, no logic           |
+
+---
+
+## **Packets and Frames**
+
+- Packets = small data pieces transmitted **across networks (WAN/Internet)** with the help of **IP addresses**.
+
+- Frames = data units transmitted **within local networks (LAN)** with the help of **MAC addresses**.
+
+### How They Work Together:
+
+1. PC sends HTTP request → packaged into a **packet** (Layer 3).
+2. Packet wrapped in a **frame** (Layer 2) for local delivery.
+3. Switch reads **MAC address** in frame, forwards it.
+4. Router strips frame, reads **IP address** in packet, routes to Internet.
+
+---
+**Packets** = IPs + Routers (Internet)
+**Frames** = MACs + Switches (LAN)
+
+**Frames carry packets just like trucks carry envelopes!**
+
+---
+
